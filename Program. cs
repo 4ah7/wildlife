@@ -1,0 +1,30 @@
+using System;
+using System.Numerics;
+
+class Aimbot
+{
+    // Simulated enemy position
+    static Vector2 enemyHeadPosition = new Vector2(500, 300);
+
+    // Simulated crosshair position
+    static Vector2 crosshairPosition = new Vector2(100, 100);
+
+    static void Main()
+    {
+        Console.WriteLine("Press SPACE to aim at the enemy...");
+
+        while (true)
+        {
+            if (Console.KeyAvailable && Console.ReadKey(true).Key == ConsoleKey.Spacebar)
+            {
+                AimAtEnemy();
+            }
+        }
+    }
+
+    static void AimAtEnemy()
+    {
+        crosshairPosition = enemyHeadPosition;
+        Console.WriteLine($"Aimed at enemy: {crosshairPosition}");
+    }
+}
